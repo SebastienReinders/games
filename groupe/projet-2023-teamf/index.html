@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serveur MiniJeux</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body id ="main-body">
+  <header>
+      <div class = "divTitre">
+        <h1 class = "titre" id="welcomeTitle">Bienvenue sur Mini-Jeux</h1>
+      </div>
+  </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-9"></div>
+            <div class="col-3">
+                <form id="loginForm" class="form-inline">
+                  <div id="inscriptionMessage" class="alert alert-success" style="display: none;">Inscription réussie</div>
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="loginInput" placeholder="Login">
+                    <input type="password" class="form-control mb-2 mr-sm-2" id="passwordInput" placeholder="Mot de passe">
+                    <button type="submit" id = "log" class="btn btn-primary mb-2">Login</button>
+                    <button type="button" class="btn btn-secondary mb-2" id="inscriptionBtn">Inscription</button>
+                </form>
+                <div id="loginError" class="alert alert-danger" style="display: none;">Vérifier login et mot de passe</div>
+                <button type="button" class="btn btn-primary mb-2" id="deconnexionBtn" style="display: none;">Déconnexion</button>
+            </div>
+        </div>
+    <div id="inscriptionMessage" class="alert alert-success" style="display: none;">Inscription réussie</div>
+    <br/>
+    <br/>
+    <div class="inscription-form" style="display: none;">
+      <form id="inscriptionForm">
+          <div class="form-group">
+            <input type="text" class="form-control" id="login" placeholder="Login">
+            <small class="form-text text-danger" id="loginError" style="display:none;">Login déjà existant ou login incorrect</small>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="password" placeholder="Mot de passe">
+            <small class="form-text text-danger" id="passwordError" style="display:none;">Le mot de passe doit contenir entre 8 et 25 caractères, au moins une majuscule, une minuscule, un chiffre et un caractère spécial.</small>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="passwordCheck" placeholder="Vérification mot de passe">
+            <small class="form-text text-danger" id="passwordCheckError" style="display:none;">Les mots de passe ne correspondent pas.</small>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" id="email" placeholder="Adresse e-mail">
+            <small class="form-text text-danger" id="emailError" style="display:none;">Veuillez entrer une adresse e-mail valide.</small>
+          </div>
+          <button type="submit" class="btn btn-primary">S'inscrire</button>
+      </form>
+      <br/>
+      <br/>
+      <div id="errorMessage" class="alert alert-danger" style="display: none;">Inscription pas faite</div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Tableau de high scores</th>
+        </tr>
+        <tr>
+          <th>Casse Briques</th>
+          <th>Prince Of Persia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="cassebriques-score"></td>
+          <td id="prince-score"></td>
+        </tr>
+      </tbody>
+    </table>
+     <div class="row">
+         <div class="col">
+             <h2 id = "img1" style="display: none;">Casse Briques</h2>
+             <p id = "img11" style="display: none;">
+                Le jeu "Casse Briques" est un jeu d'arcade classique dans lequel le joueur doit casser des briques en utilisant une balle et une raquette. Le joueur doit faire rebondir la balle sur la raquette pour frapper les briques et les détruire, tout en évitant de perdre la balle en la laissant tomber en bas de l'écran.
+             </p>
+             <a href="ProjetJSReinders/index.html">
+              <img src="IMG/CasseBriques.jpg" alt="Casse Briques" class="game-image" style="display: none;">
+             </a>
+         </div>
+         <div class="col">
+            <h2 id = "img2" style="display: none;">Prince of persia</h2>
+            <p id = "img22" style="display: none;">    
+              Prince of Persia est un jeu vidéo d'action-aventure développé par Jordan Mechner et publié pour la première fois en 1989. Le jeu suit le personnage du prince qui doit traverser une série de niveaux remplis de pièges mortels et d'ennemis. Le gameplay est basé sur des sauts, des combats à l'épée et des puzzles environnementaux, et le joueur doit terminer chaque niveau dans un temps limité pour sauver la princesse captive.
+            </p>
+            <a href="BanushiArber2201/index.html">
+             <img src="IMG/Prince.jpg" alt="Prince" class="game-image" style="display: none;">
+            </a>
+            </div>
+     </div>
+  </div>
+ <footer id = "footer">
+    <div class = "divTitre2">
+      <h1 class = "titre2">
+        Développé par Arber et Sébastien © [2023]
+      </h1>
+    </div>
+ </footer>
+ <script src="JS/inscription.js"></script>
+ <script src="JS/connection.js"></script>
+ <script src="JS/deconnection.js"></script>
+ <script src="JS/scores.js"></script>
+</body>
+</html>
